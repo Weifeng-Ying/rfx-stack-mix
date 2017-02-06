@@ -1,5 +1,6 @@
 import { hooks as auth } from 'feathers-authentication';
 import { setUUID } from '@/api/hooks/setUUID';
+import { timestamp } from '@/api/hooks/timestamp';
 
 /**
   Hook: before
@@ -20,6 +21,8 @@ export default {
   ],
   create: [
     setUUID(),
+    timestamp("createdAt"),
+    timestamp("updatedAt"),
     auth.hashPassword(),
   ],
   update: [

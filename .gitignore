@@ -1,6 +1,7 @@
 /public/build
 /run/build
 /node_modules
+/src/api/nedbData
 .DS_Store
 npm-debug.log
 yarn.lock

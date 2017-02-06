@@ -1,3 +1,4 @@
+/*
 import mongoose from 'mongoose';
 
 export function connector(config) {
@@ -5,4 +6,9 @@ export function connector(config) {
   const uri = ['mongodb://', host, ':', port, '/', name].join('');
   mongoose.Promise = global.Promise;
   return mongoose.connect(uri);
+}
+*/
+
+export function connector(config) {
+  return config;
 }

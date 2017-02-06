@@ -5,7 +5,8 @@ import configuration from 'feathers-configuration';
 import hooks from 'feathers-hooks';
 import rest from 'feathers-rest';
 import socketio from 'feathers-socketio';
-import adapter from 'feathers-mongoose';
+//  import adapter from 'feathers-mongoose';
+import adapter from 'feathers-nedb';
 
 import { setupServices, initServices } from '@/utils/services.autoload';
 import { setupServer, startServer } from '@/utils/server.start';
