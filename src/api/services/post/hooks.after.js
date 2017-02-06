@@ -6,7 +6,7 @@ import hooks from 'feathers-hooks';
 */
 export default {
   all: [
-    hooks.remove('_id', '__v'),
+    hooks.remove('_id'),
   ],
   find: [],
   get: [],

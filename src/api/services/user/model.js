@@ -1,13 +1,8 @@
-import mongoose from 'mongoose';
+import NeDB from 'nedb';
 
-const Schema = mongoose.Schema;
+const Dir = global.DIR;
 
-export default mongoose.model('user',
-  new Schema({
-    uuid: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true },
-    username: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
-  }));
+export default new NeDB({
+  filename: Dir.api + '/nedbData/user.db',// eslint-disable-line
+  autoload: true// eslint-disable-line
+});

@@ -1,12 +1,8 @@
-import mongoose from 'mongoose';
+import NeDB from 'nedb';
 
-const Schema = mongoose.Schema;
+const Dir = global.DIR;
 
-export default mongoose.model('post',
-  new Schema({
-    uuid: { type: String, required: true, unique: true },
-    title: { type: String, required: true },
-    completed: { type: Boolean, default: false },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
-  }));
+export default new NeDB({
+  filename: Dir.api + '/nedbData/post.db',// eslint-disable-line
+  autoload: true// eslint-disable-line
+});
