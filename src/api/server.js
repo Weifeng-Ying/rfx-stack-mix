@@ -5,8 +5,10 @@ import configuration from 'feathers-configuration';
 import hooks from 'feathers-hooks';
 import rest from 'feathers-rest';
 import socketio from 'feathers-socketio';
-//  import adapter from 'feathers-mongoose';
-import adapter from 'feathers-nedb';
+ // import adapter from 'feathers-mongoose';
+import feathers_knex from 'feathers-knex';
+import feathers_nedb from 'feathers-nedb';
+import awesomeDbAdapter from './middleware/awesomeDbAdapter';
 
 import { setupServices, initServices } from '@/utils/services.autoload';
 import { setupServer, startServer } from '@/utils/server.start';
@@ -24,14 +26,19 @@ setupServer({
   logger: logServerConfig,
 });
 
+var adapter = {};
+adapter.feathers_knex = feathers_knex;
+adapter.feathers_nedb = feathers_nedb;
+adapter.awesomeDbAdapter = awesomeDbAdapter;
+
 setupServices({
   dir: __dirname,
-  adapter,
+  adapter ,
   connector,
   autoloader,
 });
 
-feathers()
+var app=feathers()
   .configure(configuration())
   .use(compression())
   .options('*', cors())
@@ -43,3 +50,8 @@ feathers()
   .configure(initServices)
   .configure(apiAfterMiddleware)
   .configure(startServer);
+
+  // console.log('start success! ');
+  // app.service('patientInformation').get('1079').then(function (relatedItem) {
+  //   console.dir(relatedItem);
+  // });

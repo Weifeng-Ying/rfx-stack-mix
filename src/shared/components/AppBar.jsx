@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import { dispatch } from 'rfx-core';
 
 import styles from '@/shared/styles/AppBar.css';
-import MenuLinksSX from './MenuLinksSX';
+// import MenuLinksSX from './MenuLinksSX';
 import MenuLinksDX from './MenuLinksDX';
 
 const openNavBtn = cx('link', 'bn', 'ph3', 'pv3', 'fl', 'bg-transparent', 'pointer', '_c1');
@@ -34,13 +34,13 @@ export default observer(({
       >
         <i className="fa fa-bars" />
       </button>
-      <div className="dn di-l">
+      {/* <div className="dn di-l">
         <MenuLinksSX inline />
-      </div>
+      </div> */}
     </div>
     <div className="dn dtc-ns v-mid w-25 tr">
       <MenuLinksDX
-        inline
+        inline={'true'}
         user={user}
         authCheck={authCheck}
         accountMenuIsOpen={accountMenuIsOpen}
@@ -48,4 +48,3 @@ export default observer(({
     </div>
   </header>
 ));
-

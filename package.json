@@ -1,13 +1,8 @@
 {
-  "name": "rfx-stack",
+  "name": "rfx-stack-mix",
   "version": "0.8.0-alpha.8",
   "license": "MIT",
   "description": "RFX Stack - Universal App featuring: React + Feathers + MobX",
-  "author": "Claudio Savino <claudio.savino@me.com> (https://twitter.com/foxhound87)",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/foxhound87/rfx-stack.git"
-  },
   "scripts": {
     "lint": "eslint . --ext .jsx,.js --ignore-path .gitignore",
     "clean:build": "rm -rf ./public/build && rm -rf ./run/build",
@@ -43,6 +38,7 @@
     "feathers-configuration": "0.4.1",
     "feathers-errors": "2.5.0",
     "feathers-hooks": "1.7.0",
+    "feathers-knex": "^2.6.0",
     "feathers-nedb": "2.6.0",
     "feathers-rest": "1.5.2",
     "feathers-socketio": "1.4.2",
@@ -51,20 +47,22 @@
     "globule": "1.1.0",
     "isdev": "1.0.1",
     "isomorphic-fetch": "2.2.1",
+    "knex": "^0.12.6",
     "lodash": "4.17.2",
-    "material-ui": "0.16.4",
+    "material-ui": "^0.16.4",
     "mobx": "2.6.5",
     "mobx-react": "4.0.3",
     "mobx-react-devtools": "4.2.10",
     "mobx-react-form": "1.16.6",
     "mobx-react-matchmedia": "1.2.0",
     "moment": "2.17.1",
-    "nedb": "1.8.0",
     "morgan": "1.7.0",
+    "nedb": "1.8.0",
     "node-uuid": "1.4.7",
     "normalize.css": "5.0.0",
-    "react": "15.4.1",
-    "react-dom": "15.4.1",
+    "oracledb": "1.12.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-helmet": "3.2.3",
     "react-hot-loader": "3.0.0-beta.6",
     "react-modal": "1.6.1",
@@ -82,8 +80,8 @@
     "winston": "2.3.0"
   },
   "peerDependencies": {
-    "react": "15.4.1",
-    "react-dom": "15.4.1"
+    "react": "15.4.2",
+    "react-dom": "15.4.2"
   },
   "devDependencies": {
     "babel-core": "6.18.2",

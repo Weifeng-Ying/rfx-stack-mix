@@ -26,7 +26,8 @@ html * {
 
 body {
   color: #5BC0BE;
-  background-color: #1C2541;
+  /*background-color: #1C2541;*/
+  background-color: #303030;
 }
 
 a {

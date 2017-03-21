@@ -5,6 +5,7 @@ import UIStore from './stores/ui';
 import AppStore from './stores/app';
 import AuthStore from './stores/auth';
 import PostStore from './stores/post';
+import FullInforStore from './stores/fullInfor';
 
 /**
   Enables MobX strict mode globally.
@@ -22,4 +23,5 @@ export default store
     app: AppStore,
     auth: AuthStore,
     post: PostStore,
+    fullInfor: FullInforStore,
   });

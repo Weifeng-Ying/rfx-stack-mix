@@ -13,7 +13,7 @@ function $import(location, cb, component) {
 }
 
 export default (
-  <Route path="/" component={AppLayout}>
+  <Route path="/" component={AppLayout} >
 
     <IndexRoute component={Home} />
 
@@ -33,6 +33,12 @@ export default (
       path="forms"
       getComponent={(loc, cb) =>
         $import(loc, cb, 'FormsManagement')}
+    />
+
+    <Route
+      path="fullInfor"
+      getComponent={(loc, cb) =>
+        $import(loc, cb, 'FullInformation')}
     />
 
     <Route path="*" component={NotFound} status={404} />

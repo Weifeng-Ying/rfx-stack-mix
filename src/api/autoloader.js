@@ -8,11 +8,17 @@ export function autoloader($service) {
   const ServiceConfig = require(dir + '/config.js').default; // eslint-disable-line
   const ServiceModel = require(dir + '/model.js').default; // eslint-disable-line
 
-  // extend the service object with related model
-  Object.assign(ServiceConfig.options, { Model: ServiceModel });
+    // extend the service object with related model
+  if( ServiceConfig.adapter == "feathers_knex"){
+    Object.assign(ServiceConfig.options, { Model: this.db[ServiceConfig.db] });
+  }
+  else if ( ServiceConfig.adapter == "feathers_nedb" ) {
+    Object.assign(ServiceConfig.options, { Model: ServiceModel });
+  }
 
   // Create an instance of the Feather service
-  const serviceInstance = this.adapter(ServiceConfig.options);
+  // const serviceInstance = this.adapter(ServiceConfig.options);
+  const serviceInstance = this.adapter[ServiceConfig.adapter](ServiceConfig.options);
 
   // Attach the service to the app server
   log.info('Service', ServiceConfig.namespace);
