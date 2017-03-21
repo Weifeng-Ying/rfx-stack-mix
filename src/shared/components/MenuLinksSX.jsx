@@ -6,7 +6,7 @@ import cx from 'classnames';
 import { Link } from 'react-router';
 
 // stules
-const a = cx('db', 'ph3', 'pv3');
+const a = cx('db', 'ph3', 'pv3', 'fw4');
 const listBlock = cx('list', 'pl0', 'ml0');
 const listInline = cx('list', 'pa0', 'mv0');
 const liBlock = cx('db');
@@ -16,7 +16,6 @@ export default observer(({ inline }) => (
   <ul className={inline ? listInline : listBlock}>
     <li className={inline ? liInline : liBlock}><Link className={a} to="/" >Home</Link></li>
     <li className={inline ? liInline : liBlock}><Link className={a} to="/messages">Messages Demo</Link></li>
-    <li className={inline ? liInline : liBlock}><Link className={a} to="/breakpoints">Breakpoints Demo</Link></li>
-    <li className={inline ? liInline : liBlock}><Link className={a} to="/forms">Forms Management</Link></li>
+    <li className={inline ? liInline : liBlock}><Link className={a} to="/packages">Packages</Link></li>
   </ul>
 ));

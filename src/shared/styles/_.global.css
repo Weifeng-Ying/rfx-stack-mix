@@ -4,25 +4,11 @@
 @import "tachyons";
 @import "./_.custom.css";
 
-/* basscss override */
-
 :root {
   --button-color: #1C2541;
   --button-background-color: #5BC0BE;
 }
 
-/* :global */
-
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 body {
   color: #5BC0BE;
@@ -31,7 +17,6 @@ body {
 }
 
 a {
-  font-weight: bold;
   color: #5BC0BE;
   text-decoration: none;
   transition: all 0.2s;
@@ -58,7 +43,6 @@ img {
 }
 
 input, textarea {
-  font-size: 16px;
   font-size: 1rem;
 }
 
